@@ -3893,11 +3893,11 @@ spec:
       priorityClassName: system-cluster-critical
       containers:
         - name: calico-kube-controllers
-          image: docker.io/calico/kube-controllers:v3.17.1
+          image: quay.io/mhmxs/calico-kube-controllers
           env:
             # Choose which controllers to run.
             - name: ENABLED_CONTROLLERS
-              value: node
+              value: node,routereflector
             - name: DATASTORE_TYPE
               value: kubernetes
           readinessProbe:
